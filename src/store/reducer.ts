@@ -45,6 +45,7 @@ export const newsReducer = (state = initialState, action: { type: any; payload: 
       return state
   }
 }
+
 export const userReducer = (state = initialState, action: { type: any; payload: any }) => {
   switch (action.type) {
     case ActionType.SET_USER:

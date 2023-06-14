@@ -30,6 +30,7 @@ build/
 .vscode
 local.properties
 *.iml
+.eslintcache
 
 # node.js
 #
