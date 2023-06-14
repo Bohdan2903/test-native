@@ -4,10 +4,10 @@ import { useSelector } from 'react-redux'
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import { Home } from './components/Pages/home'
-import { Article } from './components/Pages/article'
-import { Contact } from './components/Pages/contact'
-import { Auth } from './components/Pages/auth'
+import { Home } from './components/Pages/Home'
+import { Article } from './components/Pages/Article'
+import { Contact } from './components/Pages/Contact'
+import { Auth } from './components/Pages/Auth'
 
 const Stack = createNativeStackNavigator()
 const App = () => {

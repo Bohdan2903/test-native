@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Text, View, Alert, TouchableOpacity } from 'react-native'
 import { useForm } from 'react-hook-form'
-import { Input } from '../Form/input'
+import { Input } from '../Form/Input'
 import { globalStyles } from '../styles'
 import { setNews } from '../../store/actions'
 import { useDispatch, useSelector } from 'react-redux'
