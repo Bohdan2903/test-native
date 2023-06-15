@@ -24,12 +24,12 @@ DerivedData
 
 # Android/IntelliJ
 #
-build/
 .idea
 .gradle
 .vscode
 local.properties
 *.iml
+.eslintcache
 
 # node.js
 #
