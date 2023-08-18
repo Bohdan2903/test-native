@@ -1,27 +1,43 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import { useSelector } from 'react-redux'
-
+import { useDispatch, useSelector } from 'react-redux'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-
-import { Home } from './components/Pages/Home'
-import { Article } from './components/Pages/Article'
-import { Contact } from './components/Pages/Contact'
-import { Auth } from './components/Pages/Auth'
+import { Home, Article, Contact, Auth, AddTask } from './screens'
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import { setUser } from './store/actions'
 
 const Stack = createNativeStackNavigator()
 const App = () => {
-  const { user } = useSelector(({ user }: any) => user)
+  const dispatch = useDispatch()
+
+  const { user } = useSelector(({ user }) => user)
+
+  useEffect(() => {
+    getData().then((r) => r)
+  }, [])
+
+  const getData = async () => {
+    try {
+      const value = await AsyncStorage.getItem('token')
+      if (value !== null) {
+        dispatch(
+          setUser({
+            id: value,
+          })
+        )
+      }
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
   return (
     <NavigationContainer>
       <Stack.Navigator>
         {user ? (
           <>
-            <Stack.Screen name="Home" options={{ title: 'Home' }}>
-              {(props) => <Home {...props} />}
-            </Stack.Screen>
-
+            <Stack.Screen name="Home">{(props) => <Home {...props} />}</Stack.Screen>
+            <Stack.Screen name="AddToDo" options={{ headerShown: false }} component={AddTask} />
             <Stack.Screen name="Article" component={Article} />
             <Stack.Screen name="Contact" options={{ title: 'Contact' }}>
               {(props) => <Contact {...props} />}

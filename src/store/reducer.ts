@@ -1,6 +1,12 @@
-import { ActionType } from './model'
+import { ActionType, IUser, Nullable, Action, INews } from './model'
 
-const initialState = {
+export interface IAuthReducer {
+  user: Nullable<IUser>
+  news: Array<INews>
+}
+
+const defaultState: IAuthReducer = {
+  user: null,
   news: [
     {
       name: 'Google',
@@ -31,10 +37,8 @@ const initialState = {
       text: 'Facebook news is top in the words',
     },
   ],
-  user: null,
 }
-
-export const newsReducer = (state = initialState, action: { type: any; payload: any }) => {
+export const newsReducer = (state = defaultState, action: Action<Nullable<INews>>) => {
   switch (action.type) {
     case ActionType.SET_NEWS:
       return {
@@ -46,7 +50,7 @@ export const newsReducer = (state = initialState, action: { type: any; payload: 
   }
 }
 
-export const userReducer = (state = initialState, action: { type: any; payload: any }) => {
+export const userReducer = (state = defaultState, action: Action<Nullable<IUser>>) => {
   switch (action.type) {
     case ActionType.SET_USER:
       return {

@@ -14,7 +14,7 @@ export const Input = ({ name, control, rules, errors }: any) => {
 const styles = StyleSheet.create({
   input: {
     height: 40,
-    margin: 12,
+    marginVertical: 12,
     borderWidth: 1,
     borderColor: '#000',
     padding: 10,

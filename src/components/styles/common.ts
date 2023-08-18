@@ -12,6 +12,10 @@ export const globalStyles = StyleSheet.create({
   },
   header: {
     padding: 16,
+    justifyContent: 'center',
+    gap: 2,
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: '#5db9ea',
   },
   text: {
@@ -26,6 +30,23 @@ export const globalStyles = StyleSheet.create({
     fontWeight: '700',
     color: '#171616',
     fontFamily: 'NotoSans-Bold',
+  },
+  button: {
+    backgroundColor: '#00aeef',
+    borderColor: 'black',
+    color: 'white',
+    padding: 12,
+    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderRadius: 8,
+  },
+  error: {
+    color: 'red',
+    marginBottom: 8,
+    fontSize: 12,
   },
   sprite: {
     height: 0,
