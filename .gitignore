@@ -4,6 +4,7 @@
 
 # Xcode
 #
+vendor/
 build/
 *.pbxuser
 !default.pbxuser
@@ -67,3 +68,4 @@ Gemfile.lock
 /ios/GoogleService-Info.plist
 /ios/Procredit*
 /fastlane/
+/vendor/
