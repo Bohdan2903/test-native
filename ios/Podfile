@@ -49,17 +49,18 @@ target 'reactNativePet' do
     # Pods for testing
   end
 
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+
   post_install do |installer|
     react_native_post_install(installer)
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
-    # Add these lines for Xcode 14 builds
-    installer.generated_projects.each do |project|
-      project.targets.each do |target|
-          target.build_configurations.each do |config|
-              config.build_settings["DEVELOPMENT_TEAM"] = "TEAM_ID"
-          end
-      end
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['EXPANDED_CODE_SIGN_IDENTITY'] = ""
+            config.build_settings["ONLY_ACTIVE_ARCH"] = "NO"
+            config.build_settings['CODE_SIGNING_REQUIRED'] = "NO"
+            config.build_settings['CODE_SIGNING_ALLOWED'] = "NO"
+        end
     end
-    # End of added lines
   end
 end
