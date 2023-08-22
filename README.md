@@ -1,19 +1,15 @@
-# Awesom1
+# test-native
 
+v18.13.0 for node
+0.39.4 for nvm
+ruby use >= 2.7.6
 
 npm i --legacy-peer-deps / yarn
 
-ruby use >= 2.7.6
+npm run postinstall
 
-cd/ios and :
-
-delete build folder
-
-bundle install
-
-bundle exec pod install or pod install
-
-
-or npm run postinstall
+npm run pods
 
 npx react-native-fix-image
+
+npm start --reset-cache / npm run ios
