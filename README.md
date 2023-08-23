@@ -13,3 +13,6 @@ npm run pods
 npx react-native-fix-image
 
 npm start --reset-cache / npm run ios
+
+if error rm -rf ~/Library/Developer/Xcode/DerivedData/ && 
+npm run pods-update
