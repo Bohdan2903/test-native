@@ -15,9 +15,9 @@ module.exports = {
   },
   "extends": [
     "plugin:react/recommended",
-    "plugin:@react-native-community",
     "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
   ],
+  plugins: ['@typescript-eslint'],
   "rules": {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     "@typescript-eslint/no-empty-interface": "off",
